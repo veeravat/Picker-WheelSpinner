@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Random</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        img {
+            -webkit-transition: -webkit-transform 5s ease-out;
+        }
+        
+        body {
+            overflow: hidden;
+        }
+        
+        .overlap-img {
+            position: relative;
+        }
+        
+        .headwheel {
+            z-index: 3;
+            position: absolute;
+            top: 0;
+        }
+        
+        .wheel {
+            z-index: 1;
+            position: absolute;
+            top: 50px;
+        }
+        
+        .resc {
+            vertical-align: bottom;
+        }
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="well well-lg resc">
+
+                    <div class="row">
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <h4>ใส่รหัสนักศึกษา</h4>
+                        </div>
+
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                            <div class="input-group">
+                                <div class="input-group-addon">1-60-07</div>
+                                <input type="number" name="" id="stdID" class="form-control" value="" min="5" max="5" required="required" title="XXXXX" placeholder="XXXXX" style="width:90px">
+                            </div>
+
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+                            <div style="display:none" class="alerr alert alert-danger">
+                                <strong>เห้ยย!!</strong> รหัสไม่ถูกต้องนะ ใส่ตัวเลข 5 ตัวพอ ...
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <h2 class="deg">กดที่วงล้อสิ แล้วเจ้าจะได้รู้ความจริง !! </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="overlap-img">
+                    <img src="images/head.png" class="img-responsive headwheel" alt="Image">
+                    <img src="images/wheel.png" class="img-responsive wheel" alt="Image">
+                </div>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- jQuery -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
