@@ -43,6 +43,7 @@
                 $('.deg').html(house);
                 $("#stdID").val("");
                 $("#stdID").focus();
+                var savings_data = JSON.stringify(houseData);
             }, 5000);
 
         }
