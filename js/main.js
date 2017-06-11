@@ -1,46 +1,51 @@
         var curdeg = 0;
         var img = document.querySelector('.wheel');
         img.addEventListener('click', onClick, false);
-
+        var click = false;
 
         function onClick() {
-            var stdid = "16007" + $("#stdID").val();
-            if (stdid != "" && $.isNumeric(stdid) && stdid.length == 10) {
-                $(".alerr").hide();
-            } else {
-                $(".alerr").show();
-                $("#stdID").focus();
+            if (click) {
                 return false;
-            }
-            this.removeAttribute('style');
-            loadingText();
-            randDeg(curdeg, function(chance) {
-                getdeg = chance;
-                curdeg = getdeg.deg;
-                var rotation = curdeg % 360;
-
-                var css = '-webkit-transform: rotate(' + (Math.abs(curdeg)) + 'deg);';
-                document.querySelector('.wheel').setAttribute(
-                    'style', css
-                );
-                var house;
-                if (rotation > 0 && rotation <= 90) {
-                    house = 'เจ้าหน้าใหม่ คงเป็นสาวกหุ่นเขียวสินะ Kotlin นี่ละที่เหมาะกับเจ้า !!';
-                } else if (rotation >= 91 && rotation <= 180) {
-                    house = 'ดูจากหน้าตาที่ไม่ค่อยอัพเดทแล้ว เจ้าคงเหมาะกับ Cobol ที่สุดแล้วละ !!';
-                } else if (rotation >= 181 && rotation <= 270) {
-                    house = 'อืมม เจ้าคงเข้ากับคนได้มากมายเหมือนที่ Java ใช้ได้กับ ทุก Platform ';
-                } else if (rotation >= 271 && rotation <= 360) {
-                    house = 'พิษสงร้ายเยี่ยงนัก เจ้าคงเหมาะกับงู ไปอยู่กับ python ซะ !!';
-                }
-                setTimeout(function() {
-                    $('.deg').html(house);
-                    // $("#stdID").val("");
+            } else {
+                click = true;
+                var stdid = "16007" + $("#stdID").val();
+                if (stdid != "" && $.isNumeric(stdid) && stdid.length == 10) {
+                    $(".alerr").hide();
+                } else {
+                    $(".alerr").show();
                     $("#stdID").focus();
-                    saveJson();
-                }, 5000);
-            });
+                    return false;
+                }
+                this.removeAttribute('style');
+                loadingText();
+                randDeg(curdeg, function(chance) {
+                    getdeg = chance;
+                    curdeg = getdeg.deg;
+                    var rotation = curdeg % 360;
 
+                    var css = '-webkit-transform: rotate(' + (Math.abs(curdeg)) + 'deg);';
+                    document.querySelector('.wheel').setAttribute(
+                        'style', css
+                    );
+                    var house;
+                    if (rotation > 0 && rotation <= 90) {
+                        house = 'เจ้าหน้าใหม่ คงเป็นสาวกหุ่นเขียวสินะ Kotlin นี่ละที่เหมาะกับเจ้า !!';
+                    } else if (rotation >= 91 && rotation <= 180) {
+                        house = 'ดูจากหน้าตาที่ไม่ค่อยอัพเดทแล้ว เจ้าคงเหมาะกับ Cobol ที่สุดแล้วละ !!';
+                    } else if (rotation >= 181 && rotation <= 270) {
+                        house = 'อืมม เจ้าคงเข้ากับคนได้มากมายเหมือนที่ Java ใช้ได้กับ ทุก Platform ';
+                    } else if (rotation >= 271 && rotation <= 360) {
+                        house = 'พิษสงร้ายเยี่ยงนัก เจ้าคงเหมาะกับงู ไปอยู่กับ python ซะ !!';
+                    }
+                    setTimeout(function() {
+                        $('.deg').html(house);
+                        // $("#stdID").val("");
+                        $("#stdID").focus();
+                        click = false;
+                        // saveJson();
+                    }, 5000);
+                });
+            }
         }
 
         function randDeg(deg, callback) {
