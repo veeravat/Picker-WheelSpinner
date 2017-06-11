@@ -1,18 +1,14 @@
 {
     "java": {
-        "total": 0,
-        "list": []
+        "list": ["", ""]
     },
     "kotlin": {
-        "total": 0,
-        "list": []
+        "list": [""]
     },
     "cobol": {
-        "total": 0,
-        "list": []
+        "list": [""]
     },
     "python": {
-        "total": 0,
-        "list": []
+        "list": [""]
     }
 }
