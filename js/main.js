@@ -39,10 +39,10 @@
                     }
                     setTimeout(function() {
                         $('.deg').html(house);
-                        // $("#stdID").val("");
+                        $("#stdID").val("");
                         $("#stdID").focus();
                         click = false;
-                        // saveJson();
+                        saveJson(stdid, getdeg.house);
                     }, 5000);
                 });
             }
@@ -69,6 +69,22 @@
                 callback(res);
             });
 
+        }
+
+        function saveJson(id, house) {
+            $.ajax({
+                type: "POST",
+                url: "json.php",
+                data: {
+                    'data': 'saveJson',
+                    'id': id,
+                    'house': house
+                },
+                success: function(result) {
+
+                },
+                dataType: "json"
+            });
         }
 
         function getChance(callback) {

@@ -1,14 +1,1 @@
-{
-    "java": {
-        "list": ["", ""]
-    },
-    "kotlin": {
-        "list": [""]
-    },
-    "cobol": {
-        "list": [""]
-    },
-    "python": {
-        "list": [""]
-    }
-}
+{ "java": { "list": [""] }, "kotlin": { "list": [""] }, "cobol": { "list": [""] }, "python": { "list": [""] } }
