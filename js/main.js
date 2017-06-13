@@ -14,6 +14,7 @@
                 } else {
                     $(".alerr").show();
                     $("#stdID").focus();
+                    click = false;
                     return false;
                 }
                 this.removeAttribute('style');
@@ -104,7 +105,7 @@
                     data['python'] = Math.floor((houseData.python.list.length / sum) * 10000);
 
                     for (var x in data) {
-                        if (data[x] > 2500) {
+                        if (data[x] > 3000) {
                             forbid.push(x);
                         }
                     }

@@ -17,4 +17,26 @@ if(isset($_POST['data'])){
         fclose($myfile);
     }
 
+
+
+}
+if(isset($_GET['reset'])){
+    $myfile = fopen("house.json", "w") or die("Unable to open file!");
+    $json = '{
+    "java": {
+        "list": []
+    },
+    "kotlin": {
+        "list": []
+    },
+    "cobol": {
+        "list": []
+    },
+    "python": {
+        "list": []
+    }
+}';
+    fwrite($myfile, $json);
+    fclose($myfile);
+    header('Location: ./');
 }
