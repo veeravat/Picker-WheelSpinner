@@ -1,1 +1,3 @@
-wipItem/
+wipItem/*
+vendor/*
+composer.lock
